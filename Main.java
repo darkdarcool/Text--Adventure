@@ -159,11 +159,18 @@ static void loadf() {
       typewriter("You turn on the lamp an can somewhat see. You realise that your in your room.", 50);
       sleepf();
       typewriter("\nYou get up and get dressed for the day. When you walk out of the room. It is way different. ", 50);
+      typewriter("Everything is floating.\n", 50);
     }
     public static void main(String[] args) {
       clearf();
       System.out.print(Color.RED_BOLD);
       typewriter("Welcome to this text adventure, what is your name?\n", 50);
+      int weaponChanceLOW = 0;
+      int weaponChanceHIGHT = 1;
+      int enemyHealth = 5;
+      int enemyDamage = 1;
+      int playerHealth = 10;
+      int playerDamage = 3;
       System.out.print(Color.RESET);
       Scanner nameObj = new Scanner(System.in);  // Create a Scanner object
       String name = nameObj.nextLine();  // Read user input
@@ -175,9 +182,12 @@ static void loadf() {
       System.out.print(Color.GREEN_BOLD);
       typewriter("Compiling game...\n", 50);
       System.out.print(Color.RESET);
+      battlef();
+      /*
       loadf();
       clearf();
       startPoint();
+      */
     }
 }
 /*
