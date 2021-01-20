@@ -124,8 +124,12 @@ static void loadf() {
       System.out.print(Color.RED_BOLD);
       sleepf();
       clearf();
-      typewriter("Hello " + name, 50);
+      typewriter("Hello " + name + ", I see that you have come to seek wisdom of the Python language. You will be esocrted through multiple challenges, and maybe you will find then end. Though you must be persistent. You may procede, to level one.", 50);
+      sleepf();
+      clearf();
+   
     }
+    
 }
 /*
 public static void {Name}() {
