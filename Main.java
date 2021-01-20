@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.*; 
 public class Main {
 enum Color {
     RESET("\033[0m"),
@@ -105,89 +106,32 @@ static void loadf() {
             }
         }
     }
+
+
     public static void clearf() {
       System.out.print("\033[H\033[2J");
       System.out.flush();
     }
-    public static void deathf() {
-      System.out.print(Color.RESET);
-      System.out.print(Color.RED_BACKGROUND_BRIGHT);
-      clearf();
-      typewriter("YOU DIED", 50);
-      System.out.print(Color.RESET);
-      System.exit(0);
-    }
-    public static void startPoint() {
-      System.out.print(Color.WHITE_BOLD);
-      typewriter("You wake up in a cold room. You don't remember where you are. As you slowy start seeing in the dark, you see a lamp in your blurry vision. What do you do?\n", 50);
-      System.out.print(Color.RESET);
-      System.out.print(Color.BLUE_BOLD);
-      while (true) {
-        Scanner lampOnObj = new Scanner(System.in);  // Create a Scanner object
-        String lampOn = lampOnObj.nextLine();
-        if (lampOn.equals ("use")) {
-          break;
-
-        }
-        else if (lampOn.equals ("look")) {
-          System.out.print(Color.RESET);
-          System.out.print(Color.WHITE_BOLD);
-          typewriter("It's to dark to see. You should turn on you lamp by using the 'use' command.\n", 50);
-          System.out.print(Color.BLUE_BOLD);
-        }
-        else if (lampOn.equals ("move")) {
-          System.out.print(Color.RESET);
-          System.out.print(Color.WHITE_BOLD);
-          typewriter("You get up, you walk and bang into a wall, -1 damage. ", 50);
-          deathf();
-        }
-        else if (lampOn.equals ("")) {
-          System.out.print(Color.RESET);
-          System.out.print(Color.WHITE_BOLD);
-          typewriter("INPUT CANNOT BE NULL\n", 50);
-        }
-        else {
-          System.out.print(Color.RESET);
-          System.out.print(Color.WHITE_BOLD);
-          typewriter("INVALID OPTION\n", 50);
-        }
-      }
-      System.out.print(Color.RESET);
-      System.out.print(Color.WHITE_BOLD);
-      sleepf();
-      clearf();
-      typewriter("You turn on the lamp an can somewhat see. You realise that your in your room.", 50);
-      sleepf();
-      typewriter("\nYou get up and get dressed for the day. When you walk out of the room. It is way different. ", 50);
-      typewriter("Everything is floating.\n", 50);
-    }
     public static void main(String[] args) {
       clearf();
       System.out.print(Color.RED_BOLD);
-      typewriter("Welcome to this text adventure, what is your name?\n", 50);
-      int weaponChanceLOW = 0;
-      int weaponChanceHIGHT = 1;
-      int enemyHealth = 5;
-      int enemyDamage = 1;
-      int playerHealth = 10;
-      int playerDamage = 3;
+      typewriter("Welcome Wisdom seeking human, what is your name?\n", 50);
       System.out.print(Color.RESET);
+      System.out.print(Color.WHITE_BOLD);
       Scanner nameObj = new Scanner(System.in);  // Create a Scanner object
       String name = nameObj.nextLine();  // Read user input
+      System.out.print(Color.RESET);
       System.out.print(Color.RED_BOLD);
-      typewriter("Your name is now: " + name, 50);
+      if (name == "Darren") {
+        typewriter("Hey, that's my name! You cant have my name.", 50);
+        System.exit(0);
+      }
+      else {
+        ;
+      }
       sleepf();
       clearf();
-      System.out.print(Color.RESET);
-      System.out.print(Color.GREEN_BOLD);
-      typewriter("Compiling game...\n", 50);
-      System.out.print(Color.RESET);
-      battlef();
-      /*
-      loadf();
-      clearf();
-      startPoint();
-      */
+      typewriter("Hello World", 50);
     }
 }
 /*
