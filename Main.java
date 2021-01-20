@@ -122,16 +122,9 @@ static void loadf() {
       String name = nameObj.nextLine();  // Read user input
       System.out.print(Color.RESET);
       System.out.print(Color.RED_BOLD);
-      if (name == "Darren") {
-        typewriter("Hey, that's my name! You cant have my name.", 50);
-        System.exit(0);
-      }
-      else {
-        ;
-      }
       sleepf();
       clearf();
-      typewriter("Hello World", 50);
+      typewriter("Hello " + name, 50);
     }
 }
 /*
